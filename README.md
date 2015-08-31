@@ -12,13 +12,13 @@ Javascript based library to display bangla date.
 এরপরে নিচের কোডটি কল করুন convert ফাংশনে আপনার দরকার মতো প্যারামিটার দিয়ে:
 ```javascript
 var dateConverted = new buetDateConverter().convert("বুয়েটে এখন: l A gটা iমিনিট, j F, Y (বঙ্গাব্দ)");
-// dateConverte = 'বুয়েটে এখন: রবিবার রাত ৪টা ৩০মিনিট, ১০ জ্যৈষ্ঠ, ১৪২২ (বঙ্গাব্দ)';
+// dateConverted = 'বুয়েটে এখন: রবিবার রাত ৪টা ৩০মিনিট, ১০ জ্যৈষ্ঠ, ১৪২২ (বঙ্গাব্দ)';
 // now dateConverted is converted as a Bangla date
 ```
 আপনারা চাইলে buetDateConverter এর constructor এ নিজস্ব custom-date ও পাঠাতে পারেন। তখন এভাবে কল করুন:
 ```javascript
 var customDate = new Date();
-var dateConverted = new buetDateConverter().convert("<your custom format>");
+var dateConverted = new buetDateConverter(customDate).convert("<your custom format>");
 // now dateConverted is converted as a Bangla date
 ```
 
