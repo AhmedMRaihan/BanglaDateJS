@@ -1,0 +1,25 @@
+{
+  "name": "BanglaDateJS",
+  "version": "1.0",
+  "description": "Javascript library to display use php's date function parameters to output bangla texts",
+  "author": "BUETian.org",
+  "scripts": {
+	"test": "grunt travis --verbose"
+  },
+  "repository": "MythicAngel/BanglaDateJS",
+  "bugs": { "url" : "http://github.com/iandanforth/nupic-js/issues" },
+  "author": {
+    "name": "BUETian.org"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-qunit": "~0.7.0"
+  }
+}

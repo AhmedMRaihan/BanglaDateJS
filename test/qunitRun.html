@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>QUnit Test Suite</title>  
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.20.0.css" type="text/css">
+	<script src="https://code.jquery.com/qunit/qunit-1.20.0.js"></script>
+
+	<!-- Your project file goes here -->  
+    <script type="text/javascript" src="../src/buetDateTime.js"></script>
+    <!-- Your tests file goes here -->  
+    <!-- <script type="text/javascript" src="myTests.js"></script>   -->
+</head>  
+<body>  
+    <h1 id="qunit-header">QUnit Test Suite</h1>  
+    <h2 id="qunit-banner"></h2>  
+	
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+  
+    <script>
+      // Let's test this function  
+      function getCurrentYear() {  
+        return new buetDateConverter().convert("Y");  
+      }  
+      test('getCurrentYear', function() { 
+        ok(getCurrentYear(), '১৪২২');
+      })  
+    </script>
+	  
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+
+</body>  
+</html>  

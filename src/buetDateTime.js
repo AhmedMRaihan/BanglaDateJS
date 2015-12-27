@@ -8,6 +8,8 @@ Date.prototype.toBuetTime = function() {
     return this;
 };
 
+// Version: 1.0
+
 function buetDateConverter(inputDate)
 {
 	var d = Object.prototype.toString.call(inputDate) === '[object Date]' ? inputDate : new Date().toBuetTime();
