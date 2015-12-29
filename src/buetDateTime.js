@@ -16,7 +16,7 @@ function buetDateConverter(inputDate)
 	this.inputDate = d;
 	
 	var y = this.inputDate.getFullYear();
-	this.leapYear = ((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0);
+	this.leapYear = ((y % 4 === 0) && (y % 100 !== 0)) || (y % 400 === 0);
 	if(this.leapYear)
 	{
 		this.formatConvertList.multiplierBD[11] = 31;
@@ -45,19 +45,20 @@ buetDateConverter.prototype.prepareDateInstanceFormats = function(){
 	this.dateInstance.A = this.A();
 	this.dateInstance.Y = this.Y(this.inputDate.getFullYear());
 	
-	var Fj = this.Fj(this.inputDate.getMonth(),this.inputDate.getDate());
-	this.dateInstance.F = Fj.m-1;
-	this.dateInstance.j = Fj.d;	
-}
-
-buetDateConverter.prototype.Fj = function(m,d){
 	if( this.totalDaysInEN < this.firstDayInBD)
 	{
 		this.totalDaysInEN = 365+(+this.leapYear)-( this.firstDayInBD-this.totalDaysInEN);
 	}
 	else
+	{
 		this.totalDaysInEN-= this.firstDayInBD;
+	}	
+	var Fj = this.Fj();
+	this.dateInstance.F = Fj.m-1;
+	this.dateInstance.j = Fj.d;	
+};
 
+buetDateConverter.prototype.Fj = function(){
 	var m=0;
 	for(var i=0;i<this.formatConvertList.multiplierBD.length && this.totalDaysInEN>=0;++i)
 	{
@@ -69,8 +70,9 @@ buetDateConverter.prototype.Fj = function(m,d){
 	return {
 		"m": m,
 		"d": this.totalDaysInEN +1
-	}
-}
+	};
+};
+
 buetDateConverter.prototype.Y = function(y){
 	if( y-2016 > 0)
 		y =1423 + Math.floor((y-2016)/4)*4 + (y-2016) % 4;
@@ -81,7 +83,8 @@ buetDateConverter.prototype.Y = function(y){
 		y = y-1;
 	
 	return y;
-}
+};
+
 buetDateConverter.prototype.A = function(){
 	if( this.dateInstance.G >= 6 && this.dateInstance.G < 12)
 		return 0;
@@ -97,8 +100,8 @@ buetDateConverter.prototype.A = function(){
 		return 4;
 
 	return 5;	
-		
-}
+};
+
 buetDateConverter.prototype.convert = function(formatString){
 	this.formatString = formatString;
 	
@@ -106,7 +109,7 @@ buetDateConverter.prototype.convert = function(formatString){
 	for (var i = 0; i < formatString.length; ++i)
 	{
 		var singleFormatChar = formatString.charAt(i);
-		if( singleFormatChar in this.dateInstance == false)
+		if( singleFormatChar in this.dateInstance === false)
 		{
 			bDate += singleFormatChar;
 			continue;
@@ -121,21 +124,22 @@ buetDateConverter.prototype.convert = function(formatString){
 				var intToStr = this.dateInstance[singleFormatChar].toString();
 				for( var j=0; j<intToStr.length; ++j)
 				{
-					bDate += this.formatConvertList["_N"][intToStr[j]];
+					bDate += this.formatConvertList._N[intToStr[j]];
 				}
 				break;
 		}
 	}
 		
 	return bDate;
-}
+};
+
 buetDateConverter.prototype.formatConvertList = 
 {
 	"multiplierEN" : [31,28,31,30,31,30,31,31,30,31,30,31],
 	"multiplierBD" : [31,31,31,31,31,30,30,30,30,30,30,30],
 	
-	"A" : ["সকাল", "দুপুর", "বিকাল", "সন্ধ্যা", "রাত", ""],
+	"A" : ["সকাল", "দুপুর", "বিকাল", "সন্ধ্যা", "রাত"],
 	"F" : ["বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন", "কার্তিক", "অগ্রহায়ণ", "পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র"],
 	"l" : ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"],
 	"_N" : ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"]
-}
+};

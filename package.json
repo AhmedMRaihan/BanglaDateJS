@@ -4,7 +4,9 @@
   "description": "Javascript library to display use php's date function parameters to output bangla texts",
   "author": "BUETian.org",
   "repository": "MythicAngel/BanglaDateJS",
-  "bugs": { "url" : "http://github.com/iandanforth/nupic-js/issues" },
+  "bugs": { 
+	"url" : "https://github.com/MythicAngel/BanglaDateJS/issues" 
+  },
   "author": {
     "name": "BUETian.org"
   },
