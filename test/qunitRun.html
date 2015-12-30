@@ -18,21 +18,22 @@
 	<div id="qunit-fixture"></div>
   
     <script>
-    QUnit.test( "System date conversion", function( assert ) {
-        assert.ok(new buetDateConverter().convert("G") === '২১', "Take current system time and test");
-    });
+	QUnit.test( "System date conversion", function( assert ) {
+		assert.ok(new buetDateConverter().convert("Y") === '১৪২২', "Take current system time and test");
+	});
+	
 	QUnit.test( "Custom/User provided datetime conversion", function( assert ) {
-		var date = new Date("2004-12-11T19:47:10.928Z");
+		var date = new Date("2004-12-11T19:47:10.928+0600");
 		var convertedDate = new buetDateConverter(date);
 		
-        assert.equal(convertedDate.convert("F"), 'অগ্রহায়ণ', "Month equivalent testing");
+        	assert.equal(convertedDate.convert("F"), 'অগ্রহায়ণ', "Month equivalent testing");
 		assert.equal(convertedDate.convert("i"), '৪৭', "Minute conversion");
 		assert.equal(convertedDate.convert("s"), '১০', "Second conversion");
 		
-		var leapYear = new Date("2012-02-29T15:31:24.029Z");
+		var leapYear = new Date("2012-02-29T15:31:24.029+0000");
 		var convertedLeapYear = new buetDateConverter(leapYear);
 		
-        assert.equal(convertedLeapYear.convert("l, j F Y, A g:i"), 'বুধবার, ১৭ ফাল্গুন ১৪১৮, রাত ৯:৩১', "Leap year conversion of an user provided date");
+	        assert.equal(convertedLeapYear.convert("l, j F Y, A g:i"), 'বুধবার, ১৭ ফাল্গুন ১৪১৮, রাত ৯:৩১', "Leap year conversion of an user provided date");
     });
     </script>
 	  
