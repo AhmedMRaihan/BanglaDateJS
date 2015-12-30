@@ -21,6 +21,7 @@ var customDate = new Date();
 var dateConverted = new buetDateConverter(customDate).convert("<your custom format>");
 // now dateConverted is converted as a Bangla date
 ```
+সতর্কতা: custom-date পাঠালে এই লাইব্রেরীটি তাতে কোনরূপ পরিবর্তন করেনা। যদি আপনারা ভুল ফলাফল পাচ্ছেন মনে করেন, তাহলে অনুগ্রহ করে custom-date টি আপনার লোকাল সিস্টেম থেকে নেয়া সময় নাকি UTC সময় ভালোভাবে পরীক্ষা করে দেখুন।
 
 # প্যারামিটার তালিকা
 
