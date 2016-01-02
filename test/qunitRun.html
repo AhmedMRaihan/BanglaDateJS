@@ -17,10 +17,7 @@
   
     <script>
 	function localToUTC(date){
-		if(date.getTimezoneOffset() !== 0)
-			return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
-		else
-			return date;
+		return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
     }
 	
 	QUnit.test( "System date conversion", function( assert ) {
