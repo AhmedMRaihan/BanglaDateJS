@@ -38,6 +38,7 @@ buetDateConverter.prototype.prepareDateInstanceFormats = function(){
 	this.dateInstance = {
 		l: this.inputDate.getDay(), 
 		G: this.inputDate.getHours(), 
+		H: this.inputDate.getHours(),
 		g: this.inputDate.getHours() > 12 ? this.inputDate.getHours()-12 : this.inputDate.getHours(), 
 		i: this.inputDate.getMinutes(), 
 		s: this.inputDate.getSeconds()
@@ -55,7 +56,11 @@ buetDateConverter.prototype.prepareDateInstanceFormats = function(){
 	}	
 	var Fj = this.Fj();
 	this.dateInstance.F = Fj.m-1;
-	this.dateInstance.j = Fj.d;	
+	this.dateInstance.j = Fj.d;
+	
+	this.dateInstance.h = this.dateInstance.g;
+	this.dateInstance.m = Fj.m;
+	this.dateInstance.d = Fj.d;
 };
 
 buetDateConverter.prototype.Fj = function(){

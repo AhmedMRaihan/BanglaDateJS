@@ -2,13 +2,11 @@
 <html>  
 <head>  
     <title>QUnit Test Suite</title>  
-    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.20.0.css" type="text/css">
-	<script src="https://code.jquery.com/qunit/qunit-1.20.0.js"></script>
+    <link rel="stylesheet" href="qunit-1.20.0.css" type="text/css">
+	<script src="qunit-1.20.0.js"></script>
 
 	<!-- Your project file goes here -->  
     <script type="text/javascript" src="../src/buetDateTime.js"></script>
-    <!-- Your tests file goes here -->  
-    <!-- <script type="text/javascript" src="myTests.js"></script>   -->
 </head>  
 <body>  
     <h1 id="qunit-header">QUnit Test Suite</h1>  
@@ -19,7 +17,10 @@
   
     <script>
 	function localToUTC(date){
-    	return new Date(date.getTime() + date.getTimezoneOffset() * 60000)
+		if(date.getTimezoneOffset() !== 0)
+			return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+		else
+			return date;
     }
 	
 	QUnit.test( "System date conversion", function( assert ) {
@@ -29,12 +30,11 @@
 	QUnit.test( "Custom/User provided datetime conversion", function( assert ) {
 	
 		// 2004-12-11T19:47:10.928+0600
-   		var date = localToUTC(new Date(1102772830928));
+		var date = localToUTC(new Date(1102794430928));
 		var convertedDate = new buetDateConverter(date);
-		
-      	assert.equal(convertedDate.convert("F"), 'অগ্রহায়ণ', "Month equivalent testing");
-		assert.equal(convertedDate.convert("i"), '৪৭', "Minute conversion");
-		assert.equal(convertedDate.convert("s"), '১০', "Second conversion");
+		assert.equal(convertedDate.convert("F"), 'অগ্রহায়ণ', "Month equivalence testing");
+		assert.equal(convertedDate.convert("Y-m-dTH:i:s"), '১৪১১-৮-২৭T১৯:৪৭:১০', "W3C date format testing");
+		assert.equal(convertedDate.convert("d F, A hটা i মিনিট s সেকেন্ড, Y"), '২৭ অগ্রহায়ণ, সন্ধ্যা ৭টা ৪৭ মিনিট ১০ সেকেন্ড, ১৪১১', "Time format used in daily life");
 		
 		// 2012-02-29T21:31:24.029+0000
 		var leapYear = localToUTC(new Date(1330551084029));
