@@ -38,7 +38,7 @@ buetDateConverter.prototype.prepareDateInstanceFormats = function(){
 	this.dateInstance = {
 		l: this.inputDate.getDay(), 
 		G: this.inputDate.getHours(), 
-		H: this.inputDate.getHours(),
+		H: this.inputDate.getHours() > 9 ? this.inputDate.getHours() : '0'+this.inputDate.getHours(),
 		g: this.inputDate.getHours() > 12 ? this.inputDate.getHours()-12 : this.inputDate.getHours(), 
 		i: this.inputDate.getMinutes(), 
 		s: this.inputDate.getSeconds()

@@ -29,10 +29,15 @@
 		// 2004-12-11T19:47:10.928+0600
 		var date = localToUTC(new Date(1102794430928));
 		var convertedDate = new buetDateConverter(date);
-		assert.equal(convertedDate.convert("F"), 'অগ্রহায়ণ', "Month equivalence testing");
 		assert.equal(convertedDate.convert("Y-m-dTH:i:s"), '১৪১১-৮-২৭T১৯:৪৭:১০', "W3C date format testing");
 		assert.equal(convertedDate.convert("d F, A hটা i মিনিট s সেকেন্ড, Y"), '২৭ অগ্রহায়ণ, সন্ধ্যা ৭টা ৪৭ মিনিট ১০ সেকেন্ড, ১৪১১', "Time format used in daily life");
-		
+
+		// Wed, 06 Jan 2016 09:03:04 GMT
+		var singleDigitDate = localToUTC(new Date(1452070984123));
+		var convertedSingleDigitDate = new buetDateConverter(singleDigitDate);
+		assert.equal(convertedSingleDigitDate.convert("H"), "০৯", "Single digit hour representation");
+		assert.equal(convertedSingleDigitDate.convert("F"), 'পৌষ', "Month equivalence testing");
+
 		// 2012-02-29T21:31:24.029+0000
 		var leapYear = localToUTC(new Date(1330551084029));
 		var convertedLeapYear = new buetDateConverter(leapYear);
