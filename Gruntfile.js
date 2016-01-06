@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
 	// include libraries
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-qunit');
+	grunt.loadNpmTasks("grunt-qunit-istanbul");
 
 	// run tasks
 	grunt.registerTask('testIdentifier00', ['jshint', 'qunit']);
