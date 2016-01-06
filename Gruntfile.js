@@ -7,6 +7,16 @@ module.exports = function(grunt) {
 			files: ['src/*.js']
 		},
 		qunit: {
+			options: {
+				timeout: 30000,
+				coverage: {
+					src:["src/<%= pkg.name %>.js"],
+					instrumentedFiles: "temp/",
+					htmlReport: "build/report/coverage",
+					lcovReport: "build/report/lcov",
+					linesThresholdPct: 0
+				}
+			},
 			files: ['test/*.html']
 		}
 	});
