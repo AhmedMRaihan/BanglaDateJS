@@ -20,6 +20,6 @@
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.0",
 	"grunt-qunit-istanbul": "^0.4.0",
-	"grunt-ftp-push": "~1.1.0"
+	"grunt-ftp-push": "~0.4.3"
   }
 }
