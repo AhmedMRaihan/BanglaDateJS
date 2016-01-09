@@ -18,13 +18,31 @@ module.exports = function(grunt) {
 				}
 			},
 			files: ['test/*.html']
+		},
+		ftp_push: {
+			options: {
+				username: ftpUser,
+				password: ftpPassword,
+				host: ftpHost,
+				dest: "/www/seoul.freehostia.com/BanglaDateJS",
+				port: 21
+			},
+			files: {
+				expand: true,
+				cwd: '.',
+				src: [
+					"build/report/coverage/*"
+				]
+			}
 		}
 	});
 
 	// include libraries
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks("grunt-qunit-istanbul");
+	grunt.loadNpmTasks('grunt-ftp-push');
 
 	// run tasks
 	grunt.registerTask('testIdentifier00', ['jshint', 'qunit']);
+	grunt.registerTask('ftpDeploy00', ['ftp_push']);
 };

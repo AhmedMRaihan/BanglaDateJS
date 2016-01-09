@@ -4,7 +4,7 @@ node_js:
 before_script:
   - npm install grunt-cli -g
 after_success:
-  node test/ftpupload.js
+  grunt ftpDeploy00
 
  # whitelist
 branches:
