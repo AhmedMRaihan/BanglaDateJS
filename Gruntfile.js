@@ -21,9 +21,9 @@ module.exports = function(grunt) {
 		},
 		ftp_push: {
 			options: {
-				username: ftpUser,
-				password: ftpPassword,
-				host: ftpHost,
+				username: process.env.ftpUser,
+				password: process.env.ftpPassword,
+				host: process.env.ftpHost,
 				dest: "/www/seoul.freehostia.com/BanglaDateJS",
 				port: 21
 			},
