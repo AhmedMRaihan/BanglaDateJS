@@ -1,17 +1,13 @@
 ﻿<!DOCTYPE html>  
 <html>  
 <head>  
-    <title>QUnit Test Suite</title>  
+    <title>QUnit Test Suite for BanglaDateJS</title>  
     <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.20.0.css" type="text/css">
 	<script src="https://code.jquery.com/qunit/qunit-1.20.0.js"></script>
-
-	<!-- Your project file goes here -->  
-    <script type="text/javascript" src="../src/buetDateTime.js"></script>
+    <script type="text/javascript" data-cover src="../src/buetDateTime.js"></script>
 </head>  
-<body>  
-    <h1 id="qunit-header">QUnit Test Suite</h1>  
-    <h2 id="qunit-banner"></h2>  
-	
+<body>  	
+	<!-- Your project file goes here --> 	
 	<div id="qunit"></div>
 	<div id="qunit-fixture"></div>
   
@@ -45,11 +41,6 @@
 		assert.equal(convertedLeapYear.convert("l, j F Y, A g:i"), 'বুধবার, ১৭ ফাল্গুন ১৪১৮, রাত ৯:৩১', "Leap year conversion of an user provided date");
     });
     </script>
-	  
-</head>
-<body>
-  <div id="qunit"></div>
-  <div id="qunit-fixture"></div>
-
+	<!-- <script type='text/javascript' src='https://rawgit.com/alex-seville/blanket/v1.1.7/dist/qunit/blanket.min.js'></script> -->
 </body>  
 </html>  
