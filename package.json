@@ -14,8 +14,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-	"test": "grunt testIdentifier00 --verbose",
-	"ftpupload": "node test/ftpupload.js"
+	"test": "grunt testIdentifier00 --verbose"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

@@ -2,9 +2,9 @@ var FtpDeploy = require('ftp-deploy');
 var ftpDeploy = new FtpDeploy();
  
 var config = {
-	username: process.env.ftpUser,
-	password: process.env.ftpPassword, // optional, prompted if none given 
-	host: process.env.ftpHost,
+	username: ftpUser,
+	password: ftpPassword, // optional, prompted if none given 
+	host: ftpHost,
 	port: 21,
 	localRoot: __dirname + "/build/report/coverage",
 	remoteRoot: "/www/seoul.freehostia.com/BanglaDateJS",
