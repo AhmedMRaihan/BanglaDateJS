@@ -24,14 +24,14 @@ module.exports = function(grunt) {
 				username: process.env.ftpUser,
 				password: process.env.ftpPassword,
 				host: process.env.ftpHost,
-				dest: "/www/seoul.freehostia.com/BanglaDateJS",
+				dest: "seoul.freehostia.com/BanglaDateJS",
 				port: 21
 			},
 			files: {
 				expand: true,
 				cwd: '.',
 				src: [
-					"build/report/coverage/*"
+					"build/report/coverage/*", "build/report/coverage/**/*"
 				]
 			}
 		}
