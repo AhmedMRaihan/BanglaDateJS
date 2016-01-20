@@ -25,7 +25,8 @@ module.exports = function(grunt) {
 				password: process.env.ftpPassword,
 				host: process.env.ftpHost,
 				dest: "seoul.freehostia.com/BanglaDateJS",
-				port: 21
+				port: 21,
+				hideCredentials: true
 			},
 			files: {
 				expand: true,
