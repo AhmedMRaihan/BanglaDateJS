@@ -39,8 +39,13 @@
 		var convertedLeapYear = new buetDateConverter(leapYear);
 		
 		assert.equal(convertedLeapYear.convert("l, j F Y, A g:i"), 'বুধবার, ১৭ ফাল্গুন ১৪১৮, রাত ৯:৩১', "Leap year conversion of an user provided date");
+
+		// 2016-03-14T01:02:03.459+0600
+		var bnLeapYear = localToUTC(new Date(1457917323459));
+		var bnConvertedLeapYear = new buetDateConverter(bnLeapYear);
+		assert.equal(bnConvertedLeapYear.convert("j F"), '৩১ ফাল্গুন', "Leap year conversion of a bengali calendar date");
     });
     </script>
 	<!-- <script type='text/javascript' src='https://rawgit.com/alex-seville/blanket/v1.1.7/dist/qunit/blanket.min.js'></script> -->
 </body>  
-</html>  
+</html>
