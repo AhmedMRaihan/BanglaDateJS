@@ -19,7 +19,7 @@ function buetDateConverter(inputDate)
 	this.leapYear = ((y % 4 === 0) && (y % 100 !== 0)) || (y % 400 === 0);
 	if(this.leapYear)
 	{
-		this.formatConvertList.multiplierBD[11] = 31;
+		this.formatConvertList.multiplierBD[10] = 31;
 		this.formatConvertList.multiplierEN[1] = 29;
 	}
 	
