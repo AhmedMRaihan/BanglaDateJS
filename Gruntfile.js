@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 		},
 		testee: {
 			options: {
-				reporter: 'spec'
+				reporter: 'Spec'
 			},
 			coverage: {
 				options: {
