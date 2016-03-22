@@ -14,7 +14,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-	"test": "grunt testIdentifier00 --verbose"
+	"test": "testee test/qunitRun.html --browsers firefox --coverage"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
