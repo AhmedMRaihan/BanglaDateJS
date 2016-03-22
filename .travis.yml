@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - 'stable'
+addons:
+  firefox: "43.0"
 before_script:
   - npm install -g testee
   - npm install grunt-cli -g
