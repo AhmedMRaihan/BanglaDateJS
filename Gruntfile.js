@@ -8,14 +8,14 @@ module.exports = function(grunt) {
 		},
 		testee: {
 			options: {
-				reporter: 'Spec'
+				reporter: 'spec'
 			},
 			coverage: {
 				options: {
 				  browsers: ['firefox'],
 				  coverage: {
 					dir: 'build/coverage/',
-					reporters: ['clover']
+					reporters: ['text','html']
 				  }
 				},
 				src: ['test/*.html']
