@@ -6,18 +6,20 @@ module.exports = function(grunt) {
 		jshint: {
 			files: ['src/*.js']
 		},
-		qunit: {
+		testee: {
 			options: {
-				timeout: 30000,
-				coverage: {
-					src:["src/<%= pkg.name %>.js"],
-					instrumentedFiles: "temp/",
-					htmlReport: "build/report/coverage",
-					lcovReport: "build/report/lcov",
-					linesThresholdPct: 0
-				}
+				reporter: 'Spec'
 			},
-			files: ['test/*.html']
+			coverage: {
+				options: {
+				  browsers: ['firefox'],
+				  coverage: {
+					dir: 'build/coverage/',
+					reporters: ['clover']
+				  }
+				},
+				src: ['test/*.html']
+			}
 		},
 		ftp_push: {
 			options: {
@@ -32,7 +34,7 @@ module.exports = function(grunt) {
 				expand: true,
 				cwd: '.',
 				src: [
-					"build/report/coverage/*", "build/report/coverage/**/*"
+					"build/coverage/*", "build/coverage/**/*"
 				]
 			}
 		}
@@ -40,10 +42,10 @@ module.exports = function(grunt) {
 
 	// include libraries
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks("grunt-qunit-istanbul");
+	grunt.loadNpmTasks('testee');
 	grunt.loadNpmTasks('grunt-ftp-push');
 
 	// run tasks
-	grunt.registerTask('testIdentifier00', ['jshint', 'qunit']);
+	grunt.registerTask('testIdentifier00', ['jshint', 'testee']);
 	grunt.registerTask('ftpDeploy00', ['ftp_push']);
 };
