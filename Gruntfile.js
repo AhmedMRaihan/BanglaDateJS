@@ -54,4 +54,5 @@ module.exports = function(grunt) {
 	// run tasks
 	grunt.registerTask('testIdentifier00', ['jshint', 'testee']);
 	grunt.registerTask('ftpDeploy00', ['ftp_push']);
+	grunt.registerTask('callCoveralls', ['coveralls:master_target']);
 };
