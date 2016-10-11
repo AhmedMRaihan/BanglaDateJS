@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 				  browsers: ['firefox'],
 				  coverage: {
 					dir: 'build/coverage/',
-					reporters: ['text','html']
+					reporters: ['text','html', 'lcov']
 				  }
 				},
 				src: ['test/*.html']
