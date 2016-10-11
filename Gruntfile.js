@@ -37,6 +37,11 @@ module.exports = function(grunt) {
 					"build/coverage/*", "build/coverage/**/*"
 				]
 			}
+		},
+		coveralls: {
+			master_target: {
+				src: 'build/coverage/*.info',
+			}
 		}
 	});
 
@@ -44,6 +49,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('testee');
 	grunt.loadNpmTasks('grunt-ftp-push');
+
 
 	// run tasks
 	grunt.registerTask('testIdentifier00', ['jshint', 'testee']);

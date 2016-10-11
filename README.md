@@ -1,4 +1,4 @@
-# BanglaDateJS [![Build Status](https://travis-ci.org/MythicAngel/BanglaDateJS.png)](https://travis-ci.org/MythicAngel/BanglaDateJS)
+# BanglaDateJS [![Build Status](https://travis-ci.org/MythicAngel/BanglaDateJS.png)](https://travis-ci.org/MythicAngel/BanglaDateJS) [![Coverage Status](https://coveralls.io/repos/github/MythicAngel/BanglaDateJS/badge.svg?branch=master)](https://coveralls.io/github/MythicAngel/BanglaDateJS?branch=master)
 Javascript based library to display bangla date.
 
 At present, 92.41% code coverage is achieved in test cases.

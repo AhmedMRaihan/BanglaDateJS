@@ -19,6 +19,7 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.0",
+    "grunt-coveralls": "^1.0.1",
     "grunt-ftp-push": "~0.4.3",
     "testee": "^0.2.5"
   }
