@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('testee');
 	grunt.loadNpmTasks('grunt-ftp-push');
-
+	grunt.loadNpmTasks('grunt-coveralls');
 
 	// run tasks
 	grunt.registerTask('testIdentifier00', ['jshint', 'testee']);
