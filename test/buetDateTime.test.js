@@ -1,16 +1,9 @@
 const buetDateConverter = require('../src/buetDateTime.js');
 
 const localToUTC = (date) => {
+    // By setting TZ=UTC in config, we don't need this function anymore. https://stackoverflow.com/a/46980825
+    // Alternative would be: https://stackoverflow.com/a/16048201 
     return date;
-    /*
-    var now_utc =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
-    date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
-   
-    console.log(date);
-    console.log(new_utc);
-    //return new Date(now_utc);
-
-    return date;*/
 }
 
 describe('System date conversion', () => {
@@ -18,8 +11,13 @@ describe('System date conversion', () => {
         let currentTime = new buetDateConverter();
         expect(currentTime.convert("Y")).toBe('১৪২৫');
     });
+
+    it('Initial epoch value will match', () => {
+        // 1970-01-01T00:00:01.001+0000
+        let epochTime = new buetDateConverter(localToUTC(new Date(0)));
+        expect(epochTime.convert("Y-m-dTH:i:s")).toBe('১৩৭৬-৯-১৭T০০:০:০');
+    });
 });
-12
 
 describe("Commonly used formats", () => {
     // 2004-12-11T19:47:10.928+0600
