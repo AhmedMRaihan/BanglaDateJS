@@ -14,13 +14,14 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt testIdentifier00"
+    "test": "TZ=UTC jest"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-coveralls": "^1.0.1",
     "grunt-ftp-push": "~0.4.3",
-    "testee": "^0.2.5"
+    "testee": "^0.2.5",
+    "jest": "^23.3.0"
   }
 }
