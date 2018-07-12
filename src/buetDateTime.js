@@ -148,3 +148,9 @@ buetDateConverter.prototype.formatConvertList =
 	"l" : ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"],
 	"_N" : ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"]
 };
+
+if (!!module) {
+	if(!!module.exports){
+		module.exports = buetDateConverter;
+	}
+}
