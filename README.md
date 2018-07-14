@@ -1,7 +1,7 @@
 # BanglaDateJS [![Build Status](https://travis-ci.org/MythicAngel/BanglaDateJS.png)](https://travis-ci.org/MythicAngel/BanglaDateJS) [![Coverage Status](https://coveralls.io/repos/github/MythicAngel/BanglaDateJS/badge.svg?branch=master)](https://coveralls.io/github/MythicAngel/BanglaDateJS?branch=master)
-Javascript based library to display bangla date.
+Javascript based library to convert and display bangla date as per bangla calendar.
 
-At present, 92.41% code coverage is achieved in test cases.
+At present, 97.53% code coverage is achieved in test cases.
 
 # জাভাস্ক্রিপ্টের মাধ্যমে বাংলা তারিখ প্রদর্শন
 এই লাইব্রেরীটি তৈরীর মূল উদ্দেশ্য বাংলা তারিখ/সন সঠিকভাবে নির্ণয় করে প্রদর্শন করা। বর্তমানে যেইসব লাইব্রেরী রয়েছে সেগুলো রোমান ক্যালেন্ডার অনুসারে মাস ও তারিখ প্রদর্শন করে কিন্তু এই লাইব্রেরী দ্বারা আপনারা বাংলা মাস ও সপ্তাহের দিন প্রদর্শন/নির্ণয় করতে পারবে।

@@ -1,21 +1,13 @@
 language: node_js
 node_js:
   - 'stable'
-addons:
-  firefox: "43.0"
+
 before_script:
-  - npm install -g testee
-  - npm install grunt-cli -g
-  - echo "Starting framebuffer"
-  - sh -e /etc/init.d/xvfb start
-  - export DISPLAY=:99.0
-  - echo "Extracting firefox and setting PATH variable..."
-  - tar -xjf /tmp/firefox-43.0.tar.bz2 --directory /tmp
-  - export PATH="/tmp/firefox:$PATH"
-  - echo "Using firefox version `firefox --version`"
+  - npm install
+  - sudo apt install ncftp
 
 after_success:
-  grunt ftpDeploy00 && grunt callCoveralls
+  - ./deploy.sh
 
  # whitelist
 branches:
