@@ -15,7 +15,7 @@ describe('System date conversion', () => {
     it('Initial epoch value will match', () => {
         // 1970-01-01T00:00:01.001+0000
         let epochTime = new buetDateConverter(localToUTC(new Date(0)));
-        expect(epochTime.convert("Y-m-dTH:i:s")).toBe('১৩৭৬-৯-১৭T০০:০:০');
+        expect(epochTime.convert("Y-m-dTH:i:s (A)")).toBe('১৩৭৬-৯-১৭T০০:০:০ (রাত)');
     });
 });
 
