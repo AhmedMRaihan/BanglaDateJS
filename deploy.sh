@@ -5,5 +5,4 @@
 #ftpHost=ftp.example.com
 #ftpPath=/home/BanglaDateJS
 
-ncftpput -u $ftpUser -p $ftpPassword -R $ftpHost $ftpPath "coverage"
-exit 
+ncftpput -R -v -u $ftpUser -p $ftpPassword $ftpHost $ftpPath "coverage"
