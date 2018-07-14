@@ -4,10 +4,16 @@ node_js:
 
 before_script:
   - npm install
-  - sudo apt install ncftp
 
 after_success:
+  - chmod +x deploy.sh
   - ./deploy.sh
+
+sudo: false
+addons:
+  apt:
+    packages:
+      - ncftp
 
  # whitelist
 branches:
