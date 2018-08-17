@@ -1,4 +1,5 @@
 # BanglaDateJS [![Build Status](https://travis-ci.org/MythicAngel/BanglaDateJS.png)](https://travis-ci.org/MythicAngel/BanglaDateJS) [![Coverage Status](https://coveralls.io/repos/github/MythicAngel/BanglaDateJS/badge.svg?branch=master)](https://coveralls.io/github/MythicAngel/BanglaDateJS?branch=master)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMythicAngel%2FBanglaDateJS.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FMythicAngel%2FBanglaDateJS?ref=badge_shield)
 Javascript based library to convert and display bangla date as per bangla calendar.
 
 At present, 97.53% code coverage is achieved in test cases.
@@ -55,3 +56,7 @@ var dateConverted = new buetDateConverter(customDate).convert("<your custom form
 
 # লাইসেন্স
 ওপেন সোর্স, ফ্রি এবং যেকোন রকম অ্যাপ্লিকেশনে ব্যবহার উপযোগী (ব্যক্তিগত/বাণিজ্যিক উভয়ই) লাইসেন্সের একটি Apache license
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMythicAngel%2FBanglaDateJS.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMythicAngel%2FBanglaDateJS?ref=badge_large)
