@@ -47,8 +47,8 @@ var dateConverted = new buetDateConverter(customDate).convert("<your custom form
  11. i = মিনিট
  12. s = সেকেন্ড
  
-# Links
-* Demo: http://www.buetian.com/ সাইটে যেয়ে নিচে ফুটারে খেয়াল করুন :-) 
+# Appendix
+* Demo: [https://codepen.io/4msunset/pen/EOQaQN](https://codepen.io/4msunset/pen/EOQaQN) 
 * How to use this library: এই রিপোজিটরীটির test ফোল্ডারে থাকা html ফাইল(গুলো) দেখুন।
 * [Contact](http://www.buetian.org/)
 * [Logo](https://openclipart.org/detail/173865/simple-calendar) 
