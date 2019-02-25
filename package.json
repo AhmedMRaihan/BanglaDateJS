@@ -3,16 +3,15 @@
   "version": "2.1.0",
   "description": "Javascript library to display use php's date function parameters to output bangla texts",
   "author": {
-    "name": "BUETian.org"
+    "name": "MythicAngel.com",
+    "email": "contact@mythicangel.com"
   },
   "repository": "MythicAngel/BanglaDateJS",
   "bugs": {
     "url": "https://github.com/MythicAngel/BanglaDateJS/issues"
   },
   "license": "Apache-2.0",
-  "engines": {
-    "node": ">=0.10.0"
-  },
+  
   "scripts": {
     "test": "TZ=UTC jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
