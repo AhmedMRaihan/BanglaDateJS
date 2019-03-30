@@ -1,5 +1,5 @@
 {
-  "name": "@mythicangel/bangla-date-converter",
+  "name": "bangla-date-converter",
   "version": "2.1.0",
   "description": "Javascript library to display use php's date function parameters to output bangla texts",
   "author": "MythicAngel.com <contact@mythicangel.com>",
