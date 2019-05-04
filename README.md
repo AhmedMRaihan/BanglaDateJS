@@ -23,6 +23,19 @@ var customDate = new Date();
 var dateConverted = new buetDateConverter(customDate).convert("<your custom format>");
 // now dateConverted is converted as a Bangla date
 ```
+
+npm এর মাধ্যমেও এখন এই লাইব্রেরীটি ব্যবহার করা যাবে। ব্যবহার নির্দেশিকা: 
+```bash
+npm install bangla-date-converter;
+```
+```javascript
+// Usage:
+const bndate = require("bangla-date-converter");
+
+let date_en = new bndate(new Date());
+console.log(date_en.convert("Y-m-dTH:i:s (A)"));
+```
+
 সতর্কতা: 
  * custom-date পাঠালে এই লাইব্রেরীটি তাতে কোনরূপ পরিবর্তন করেনা। যদি আপনারা ভুল ফলাফল পাচ্ছেন মনে করেন, তাহলে অনুগ্রহ করে custom-date টি আপনার লোকাল সিস্টেম থেকে নেয়া সময় নাকি UTC সময় ভালোভাবে পরীক্ষা করে দেখুন।
  * শূন্য এর অধিক যেকোন epoch এর জন্যে এই লাইব্রেরীটি সঠিকভাবে কাজ করবে। এর নিচে হলে এর ফলাফল undefined অথবা ভুল আসতে পারে।
