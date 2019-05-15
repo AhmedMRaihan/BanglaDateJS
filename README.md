@@ -26,7 +26,7 @@ var dateConverted = new buetDateConverter(customDate).convert("<your custom form
 
 npm এর মাধ্যমেও এখন এই লাইব্রেরীটি ব্যবহার করা যাবে। ব্যবহার নির্দেশিকা: 
 ```bash
-npm install bangla-date-converter;
+npm install bangla-date-converter
 ```
 ```javascript
 // Usage:
