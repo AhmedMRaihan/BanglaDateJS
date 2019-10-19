@@ -87,6 +87,10 @@ buetDateConverter.prototype.Y = function(y){
 	if( this.firstDayInBD > this.totalDaysInEN)
 		y = y-1;
 	
+	// Reference: https://www.bbc.com/bengali/news-50082316
+	if( y >= 1426)
+		this.formatConvertList.multiplierBD[5] += 1;
+	
 	return y;
 };
 
