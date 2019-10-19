@@ -88,8 +88,8 @@ buetDateConverter.prototype.Y = function(y){
 		y = y-1;
 	
 	// Reference: https://www.bbc.com/bengali/news-50082316
-	if( y >= 1426)
-		this.formatConvertList.multiplierBD[5] += 1;
+	if( y < 1426)
+		this.formatConvertList.multiplierBD[5] -= 1;
 	
 	return y;
 };
@@ -145,7 +145,7 @@ buetDateConverter.prototype.convert = function(formatString){
 buetDateConverter.prototype.formatConvertList = 
 {
 	"multiplierEN" : [31,28,31,30,31,30,31,31,30,31,30,31],
-	"multiplierBD" : [31,31,31,31,31,30,30,30,30,30,30,30],
+	"multiplierBD" : [31,31,31,31,31,31,30,30,30,30,30,30],
 	
 	"A" : ["সকাল", "দুপুর", "বিকাল", "সন্ধ্যা", "রাত"],
 	"F" : ["বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন", "কার্তিক", "অগ্রহায়ণ", "পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র"],
