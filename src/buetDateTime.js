@@ -8,27 +8,36 @@ Date.prototype.toBuetTime = function() {
     return this;
 };
 
-// Version: 1.0
-
 function buetDateConverter(inputDate)
 {
 	var d = Object.prototype.toString.call(inputDate) === '[object Date]' ? inputDate : new Date().toBuetTime();
 	this.inputDate = d;
 	
+	// Modifications as per new convention from 19.OCT.2019
+	// Reference: https://www.bbc.com/bengali/news-50082316
+	var leapYearMonthIndex = 10, leapYearMonthDays = 30;
+	//*
+	if( d < new Date(2018,3,14) ) // Additional code to respect convention before 1426 bengali year
+	{
+		leapYearMonthDays = 31;
+		this.formatConvertList.multiplierBD[5] = 30;
+		this.formatConvertList.multiplierBD[11] = 30;
+	}
+	//*/
+
 	var y = this.inputDate.getFullYear();
 	this.leapYear = ((y % 4 === 0) && (y % 100 !== 0)) || (y % 400 === 0);
 	if(this.leapYear)
 	{
-		this.formatConvertList.multiplierBD[10] = 31;
+		this.formatConvertList.multiplierBD[leapYearMonthIndex] = leapYearMonthDays;
 		this.formatConvertList.multiplierEN[1] = 29;
 	}
 	
-	this.totalDaysInEN = 0;
-	for(var i=0;i<this.inputDate.getMonth();++i)
-	{
-		this.totalDaysInEN += this.formatConvertList.multiplierEN[i];
+	function daysIntoYear(date){
+		return (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - Date.UTC(date.getFullYear(), 0, 0)) / 24 / 60 / 60 / 1000;
 	}
-	this.totalDaysInEN += this.inputDate.getDate();
+	this.totalDaysInEN = 0;
+	this.totalDaysInEN = daysIntoYear(this.inputDate);
 	this.firstDayInBD = this.formatConvertList.multiplierEN[0]+this.formatConvertList.multiplierEN[1]+this.formatConvertList.multiplierEN[2]+14;
 	
 	this.prepareDateInstanceFormats();
@@ -87,10 +96,6 @@ buetDateConverter.prototype.Y = function(y){
 	if( this.firstDayInBD > this.totalDaysInEN)
 		y = y-1;
 	
-	// Reference: https://www.bbc.com/bengali/news-50082316
-	if( y < 1426)
-		this.formatConvertList.multiplierBD[5] -= 1;
-	
 	return y;
 };
 
@@ -145,7 +150,7 @@ buetDateConverter.prototype.convert = function(formatString){
 buetDateConverter.prototype.formatConvertList = 
 {
 	"multiplierEN" : [31,28,31,30,31,30,31,31,30,31,30,31],
-	"multiplierBD" : [31,31,31,31,31,31,30,30,30,30,30,30],
+	"multiplierBD" : [31,31,31,31,31,31,30,30,30,30,29,30],
 	
 	"A" : ["সকাল", "দুপুর", "বিকাল", "সন্ধ্যা", "রাত"],
 	"F" : ["বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন", "কার্তিক", "অগ্রহায়ণ", "পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র"],
