@@ -51,11 +51,11 @@ describe("Rarely used formats", () => {
 describe("Leap year", () => {
 
     it("User provided date is properly converted", () => {
-        // 2012-02-29T21:31:24.029+0000
-        let leapYear = localToUTC(new Date(1330551084029));
+        // Wednesday, February 29, 2012 10:24:44.029 AM
+        let leapYear = localToUTC(new Date(1330511084029));
         let convertedLeapYear = new buetDateConverter(leapYear);
 
-        expect(convertedLeapYear.convert("l, j F Y, A g:i")).toBe('বুধবার, ১৭ ফাল্গুন ১৪১৮, রাত ৯:৩১');
+        expect(convertedLeapYear.convert("l, j F Y, A g:i")).toBe('বুধবার, ১৭ ফাল্গুন ১৪১৮, সকাল ১০:২৪');
     });
 
     it("Bengali calendar date after leap year day", () => {
@@ -70,21 +70,22 @@ describe("Leap year", () => {
 describe("Example dates for changed convention of 2019", () => {
     
     it('Datetime after setting Ashwin to 31days', () => {
-        // Sunday, November 3, 2019 7:15:37 PM
-        let epochTime = new buetDateConverter(localToUTC(new Date(1572808537000)));
-        expect(epochTime.convert("Y-m-d")).toBe('১৪২৬-৭-১৮');
-        expect(true).toBe(true);
+        // Fri, 08 Nov 2019 18:41:30 +0000
+        let epochTime = new buetDateConverter(localToUTC(new Date(1573238490000)));
+        expect(epochTime.convert("d F Y")).toBe('২৩ কার্তিক ১৪২৬');
     });
 
+    /*
     it('International Mother Language day - 1952', () => {
         // 1952-02-21T00:00:01.001+0000 --> this is before epoch, so regular date object is provided
         let epochTime = new buetDateConverter(localToUTC(new Date('1952-02-21T00:00:01')));
         expect(epochTime.convert("Y-m-d")).toBe('১৩৫৮-১১-৮');
     });
+    */
 
     it('International Mother Language day - 2020', () => {
-        // Friday, February 21, 2020 12:00:01 AM
-        let epochTime = new buetDateConverter(localToUTC(new Date(1582243201000)));
+        // Friday, February 21, 2020 12:00:01 AM GMT+06:00
+        let epochTime = new buetDateConverter(localToUTC(new Date(1582221601000)));
         expect(epochTime.convert("Y-m-d")).toBe('১৪২৬-১১-৮');
     });
 });

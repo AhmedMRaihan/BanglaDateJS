@@ -16,8 +16,8 @@ function buetDateConverter(inputDate)
 	// Modifications as per new convention from 19.OCT.2019
 	// Reference: https://www.bbc.com/bengali/news-50082316
 	var leapYearMonthIndex = 10, leapYearMonthDays = 30;
-	//*
-	if( d < new Date(2018,3,14) ) // Additional code to respect convention before 1426 bengali year
+	//* Ensure that dates before the convention match with paper-published days
+	if( d < new Date(2018,3,14) && d > new Date(1970,0,1) ) // Additional code to respect convention before 1426 bengali year
 	{
 		leapYearMonthDays = 31;
 		this.formatConvertList.multiplierBD[5] = 30;
