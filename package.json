@@ -1,6 +1,6 @@
 {
   "name": "bangla-date-converter",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Javascript library to display use php's date function parameters to output bangla texts",
   "author": "MythicAngel.com <contact@mythicangel.com>",
   "repository": {
@@ -13,7 +13,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "local_test": "TZ=UTC jest --coverage",
-    "test": "TZ=UTC jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "TZ=UTC jest --coverage --coverageReporters=text-lcov && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "jest": {
     "verbose": true
