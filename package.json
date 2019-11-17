@@ -13,7 +13,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "local_test": "TZ=UTC jest --coverage",
-    "test": "TZ=UTC jest --coverage --coverageReporters=text-lcov && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "local_coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose",
+    "test": "npm run local_test"
   },
   "jest": {
     "verbose": true
