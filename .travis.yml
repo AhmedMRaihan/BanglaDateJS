@@ -5,17 +5,16 @@ node_js:
 before_script:
   - npm install
 
-""" 
-after_success:
-  - chmod a+x ./deploy.sh
-  - ./deploy.sh
+# after_success:
+#   - chmod a+x ./deploy.sh
+#   - ./deploy.sh
 
-sudo: false
-addons:
-  apt:
-    packages:
-      - ncftp
-"""
+# sudo: false
+# addons:
+#   apt:
+#     packages:
+#       - ncftp
+
  # whitelist
 branches:
   only:
