@@ -5,6 +5,9 @@ node_js:
 before_script:
   - npm install
 
+after_script:
+  - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run local_coverage
+
 # after_success:
 #   - chmod a+x ./deploy.sh
 #   - ./deploy.sh
