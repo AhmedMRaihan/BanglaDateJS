@@ -1,20 +1,22 @@
 #!/bin/bash
 
-#ftpUser="username"
-#ftpPassword="password"
-#ftpHost=ftp.example.com
-#ftpPath=/home/BanglaDateJS
-ncftpput -u $ftpUser -p $ftpPassword $ftpHost
+ftpUser=username
+ftpPassword=password
+ftpHost=ftp.example.com
+ftpPath=/site1/BanglaDateJS
+
+ncftp -u $ftpUser -p $ftpPassword $ftpHost <<EOF
 cd $ftpPath
 
-cd coverage
-cd lcov-report
+cd $ftpPath/coverage
+cd $ftpPath/coverage/lcov-report
 rm *.*
 cd ..
-rmdir lcov-report
+rmdir $ftpPath/coverage/lcov-report
 rm *.*
 cd ..
-rmdir coverage 
+rmdir $ftpPath/coverage 
 quit
+EOF
 
 ncftpput -R -v -u $ftpUser -p $ftpPassword $ftpHost $ftpPath "coverage"
