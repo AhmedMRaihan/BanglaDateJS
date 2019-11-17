@@ -158,8 +158,7 @@ buetDateConverter.prototype.formatConvertList =
 	"_N" : ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"]
 };
 
-if (!!module) {
-	if(!!module.exports){
-		module.exports = buetDateConverter;
-	}
+// mimic jQuery to export modules
+if ("object" === typeof module && "object" === typeof module.exports) {
+	module.exports = buetDateConverter;
 }
