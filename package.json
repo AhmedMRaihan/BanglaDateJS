@@ -20,6 +20,9 @@
   "devDependencies": {
     "jest": "^27.2.0"
   },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
   "homepage": "https://github.com/MythicAngel/BanglaDateJS#readme",
   "main": "src/buetDateTime.js",
   "directories": {

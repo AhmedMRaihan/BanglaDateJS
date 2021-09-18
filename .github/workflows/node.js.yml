@@ -20,5 +20,5 @@ jobs:
       uses: actions/setup-node@v2
       with:
         cache: 'npm'
-    - run: npm install
+    - run: npm install --no-optional
     - run: npm test
