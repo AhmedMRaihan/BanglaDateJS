@@ -12,16 +12,13 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "local_test": "TZ=UTC jest --coverage",
-    "local_coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose",
-    "test": "npm run local_test"
+    "test": "TZ=UTC jest --coverage"
   },
   "jest": {
     "verbose": true
   },
   "devDependencies": {
-    "coveralls": "^3.0.2",
-    "jest": "^23.3.0"
+    "jest": "^27.2.0"
   },
   "homepage": "https://github.com/MythicAngel/BanglaDateJS#readme",
   "main": "src/buetDateTime.js",
