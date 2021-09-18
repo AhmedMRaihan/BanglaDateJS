@@ -31,9 +31,9 @@ jobs:
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: ${{ env.FTP_HOST }}
-        username: ${{ env.FTP_USER }}
-        password: ${{ env.FTP_PASSWORD }}
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
         # protocol to deploy with - ftp, ftps, or ftps-legacy
         protocol: ftp
         local-dir: coverage
