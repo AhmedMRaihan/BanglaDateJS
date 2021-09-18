@@ -22,3 +22,21 @@ jobs:
         cache: 'npm'
     - run: npm install --no-optional
     - run: npm test
+
+  deployment:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ env.FTP_HOST }}
+        username: ${{ env.FTP_USER }}
+        password: ${{ env.FTP_PASSWORD }}
+        # protocol to deploy with - ftp, ftps, or ftps-legacy
+        protocol: ftp
+        local-dir: coverage
+        # Path to upload to on the server. Must end with trailing slash /
+        server-dir: /BanglaDateJS
+        # How verbose should the information be - minimal, standard, or verbose
+        log-level: standard
