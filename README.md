@@ -1,4 +1,4 @@
-# BanglaDateJS [![Build Status](https://travis-ci.org/MythicAngel/BanglaDateJS.png)](https://travis-ci.org/MythicAngel/BanglaDateJS) [![Coverage Status](https://coveralls.io/repos/github/MythicAngel/BanglaDateJS/badge.svg?branch=master)](https://coveralls.io/github/MythicAngel/BanglaDateJS?branch=master) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMythicAngel%2FBanglaDateJS.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FMythicAngel%2FBanglaDateJS?ref=badge_shield)
+# BanglaDateJS [![Github Actions CI/CD](https://github.com/AhmedMRaihan/BanglaDateJS/actions/workflows/node.js.yml/badge.svg)](https://github.com/AhmedMRaihan/BanglaDateJS/actions/workflows/node.js.yml)
 Javascript based library to convert and display bangla date as per bangla calendar.
 
 At present, 97.53% code coverage is achieved in test cases.
