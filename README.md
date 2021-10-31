@@ -1,4 +1,4 @@
-# BanglaDateJS [![Github Actions CI/CD](https://github.com/AhmedMRaihan/BanglaDateJS/actions/workflows/node.js.yml/badge.svg)](https://github.com/AhmedMRaihan/BanglaDateJS/actions/workflows/node.js.yml)
+# BanglaDateJS [![Github Actions CI/CD](https://github.com/AhmedMRaihan/BanglaDateJS/actions/workflows/node.js.yml/badge.svg)](https://github.com/AhmedMRaihan/BanglaDateJS/actions/workflows/node.js.yml) [<img alt="Deployed with FTP Deploy Action" src="https://img.shields.io/badge/Deployed With-FTP DEPLOY ACTION-%3CCOLOR%3E?style=for-the-badge&color=0077b6">](https://github.com/SamKirkland/FTP-Deploy-Action)
 Javascript based library to convert and display bangla date as per bangla calendar.
 
 At present, 97.53% code coverage is achieved in test cases.
