@@ -1,7 +1,7 @@
 # BanglaDateJS [![Github Actions CI/CD](https://github.com/AhmedMRaihan/BanglaDateJS/actions/workflows/node.js.yml/badge.svg)](https://github.com/AhmedMRaihan/BanglaDateJS/actions/workflows/node.js.yml) [<img alt="Deployed with FTP Deploy Action" src="https://img.shields.io/badge/Deployed With-FTP DEPLOY ACTION-%3CCOLOR%3E?style=for-the-badge&color=0077b6">](https://github.com/SamKirkland/FTP-Deploy-Action)
 Javascript based library to convert and display bangla date as per bangla calendar.
 
-At present, 97.53% code coverage is achieved in test cases.
+At present, 96.42% code coverage is achieved in test cases.
 
 # জাভাস্ক্রিপ্টের মাধ্যমে বাংলা তারিখ প্রদর্শন
 এই লাইব্রেরীটি তৈরীর মূল উদ্দেশ্য বাংলা তারিখ/সন সঠিকভাবে নির্ণয় করে প্রদর্শন করা। বর্তমানে যেইসব লাইব্রেরী রয়েছে সেগুলো রোমান ক্যালেন্ডার অনুসারে মাস ও তারিখ প্রদর্শন করে কিন্তু এই লাইব্রেরী দ্বারা আপনারা বাংলা মাস ও সপ্তাহের দিন প্রদর্শন/নির্ণয় করতে পারবে।
@@ -60,15 +60,10 @@ console.log(date_en.convert("Y-m-dTH:i:s (A)"));
  11. i = মিনিট
  12. s = সেকেন্ড
  
-# Appendix
-* Demo: [https://codepen.io/4msunset/pen/EOQaQN](https://codepen.io/4msunset/pen/EOQaQN) 
-* How to use this library: এই রিপোজিটরীটির test ফোল্ডারে থাকা html ফাইল(গুলো) দেখুন।
-* [Contact](http://www.buetian.org/)
-* [Logo](https://openclipart.org/detail/173865/simple-calendar) 
-
 # লাইসেন্স
 ওপেন সোর্স, ফ্রি এবং যেকোন রকম অ্যাপ্লিকেশনে ব্যবহার উপযোগী (ব্যক্তিগত/বাণিজ্যিক উভয়ই) লাইসেন্সের একটি Apache license
 
-
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMythicAngel%2FBanglaDateJS.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMythicAngel%2FBanglaDateJS?ref=badge_large)
+# Appendix
+* Demo: [https://codepen.io/4msunset/pen/EOQaQN](https://codepen.io/4msunset/pen/EOQaQN) 
+* How to use this library: এই রিপোজিটরীটির test ফোল্ডারে থাকা html ফাইল(গুলো) দেখুন।
+* [Logo](https://openclipart.org/detail/173865/simple-calendar) 

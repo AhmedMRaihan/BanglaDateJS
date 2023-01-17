@@ -1,8 +1,6 @@
 {
   "name": "bangla-date-converter",
-  "version": "3.1.0",
-  "description": "Javascript library to display bengali date as similar to php's date function",
-  "author": "MythicAngel.com <contact@mythicangel.com>",
+  "version": "3.2.0",
   "license": "Apache-2.0",
   "scripts": {
     "test": "TZ=UTC jest --coverage"
@@ -11,13 +9,6 @@
     "verbose": true
   },
   "devDependencies": {
-    "jest": "^27.2.0"
-  },
-  "optionalDependencies": {
-    "fsevents": "*"
-  },
-  "main": "src/buetDateTime.js",
-  "directories": {
-    "test": "test"
+    "jest": "^29.3.1"
   }
 }
