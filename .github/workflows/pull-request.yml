@@ -13,10 +13,10 @@ jobs:
       outputs:
         current_sha: ${{ env.GITHUB_SHA }}
       steps:
-        - run: echo "Exporting branch name"
+        - run: echo "Exporting env vars as required"
 
   continuous-integration-only:
     needs: preparation
     uses: ./.github/workflows/build-and-test.yml
     with:
-      commit_sha: ${{ needs.preparation.current_sha }}
+      commit_sha: ${{ needs.preparation.outputs.current_sha }}
