@@ -13,7 +13,7 @@ jobs:
       outputs:
         current_sha: ${{ env.GITHUB_SHA }}
       steps:
-        - run: echo "Exporting env vars as required"
+        - run: echo "Exporting env vars as required - ${{ env.GITHUB_SHA }}"
 
   continuous-integration-only:
     needs: preparation
