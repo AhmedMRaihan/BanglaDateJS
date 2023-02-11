@@ -1,0 +1,22 @@
+name: Build && Test
+
+on:
+  workflow_call:
+    inputs:
+      branch_name:
+        type: string
+
+jobs:
+  only_build:
+
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/master'
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Node.js 
+      uses: actions/setup-node@v3
+      with:
+        cache: 'npm'
+    - run: npm install --no-optional
+    - run: npm test
+    - run: echo 'Build and tests are successful for {{ inputs.branch_name }}'
