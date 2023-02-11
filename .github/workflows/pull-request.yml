@@ -8,7 +8,15 @@ on:
     branches: [ master ]
 
 jobs:
+  preparation:
+      runs-on: ubuntu-latest
+      outputs:
+        current_sha: ${{ env.GITHUB_SHA }}
+      steps:
+        - run: echo "Exporting branch name"
+
   continuous-integration-only:
+    needs: preparation
     uses: ./.github/workflows/build-and-test.yml
     with:
-      branch_name: ${{ GITHUB_REF }}
+      commit_sha: ${{ needs.preparation.current_sha }}
