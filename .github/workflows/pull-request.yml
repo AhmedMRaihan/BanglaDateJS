@@ -11,4 +11,4 @@ jobs:
   continuous-integration-only:
     uses: ./.github/workflows/build-and-test.yml
     with:
-      branch_name: ${{ env.GITHUB_REF }}
+      branch_name: ${GITHUB_REF}
