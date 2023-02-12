@@ -8,15 +8,16 @@ on:
     branches: [ master ]
 
 jobs:
-  
-  ci-cd-steps:
-    runs-on: ubuntu-latest
-    steps:
-    
-    - uses: ./.github/workflows/build-and-test.yml
-      with:
-        commit_sha: ${{ github.sha }}
+  continuous-integration-only:
+    uses: ./.github/workflows/build-and-test.yml
+    with:
+      commit_sha: ${{ github.sha }}
 
+  deployment:
+    runs-on: ubuntu-latest
+    needs: continuous-integration-only
+
+    steps:
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
