@@ -11,11 +11,12 @@ jobs:
   
   ci-cd-steps:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
     steps:
+    
     - uses: ./.github/workflows/build-and-test.yml
       with:
-        branch_name: ${{ env.GITHUB_REF }}
+        commit_sha: ${{ github.sha }}
+
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
