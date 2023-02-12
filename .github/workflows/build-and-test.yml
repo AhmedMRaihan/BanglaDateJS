@@ -20,3 +20,9 @@ jobs:
     - run: npm install --no-optional
     - run: npm test
     - run: echo Build and tests are successful for ${{ inputs.commit_sha }}
+
+    - name: Upload coverage artifacts
+      uses: actions/upload-artifact@master
+      with:
+        name: coverage-output
+        path: coverage/

@@ -18,6 +18,12 @@ jobs:
     needs: continuous-integration-only
 
     steps:
+    - name: Download coverage artifacts
+      uses: actions/download-artifact@master
+      with:
+        name: coverage-output
+        path: coverage/
+
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
