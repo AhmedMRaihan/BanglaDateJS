@@ -6,34 +6,17 @@ name: Github Actions CI/CD
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
-  only_build:
-
+  
+  ci-cd-steps:
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/master'
     steps:
-    - uses: actions/checkout@v2
-    - name: Install Node.js 
-      uses: actions/setup-node@v3
+    
+    - uses: ./.github/workflows/build-and-test.yml
       with:
-        cache: 'npm'
-    - run: npm install --no-optional
-    - run: npm test
+        commit_sha: ${{ github.sha }}
 
-  build_and_deployment:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    steps:
-    - uses: actions/checkout@v2
-    - name: Install Node.js 
-      uses: actions/setup-node@v3
-      with:
-        cache: 'npm'
-    - run: npm install --no-optional
-    - run: npm test
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
