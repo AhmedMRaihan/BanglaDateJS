@@ -19,4 +19,4 @@ jobs:
         cache: 'npm'
     - run: npm install --no-optional
     - run: npm test
-    - run: echo Build and tests are successful for {{ inputs.commit_sha }}
+    - run: echo Build and tests are successful for ${{ inputs.commit_sha }}
