@@ -9,7 +9,7 @@ const localToUTC = (date) => {
 describe('System date conversion', () => {
     it('Current year value will match', () => {
         let currentTime = new buetDateConverter();
-        expect(currentTime.convert("Y")).toBe('১৪২৯');
+        expect(currentTime.convert("Y")).toBe('১৪৩০');
     });
 
     it('Initial epoch value will match', () => {
