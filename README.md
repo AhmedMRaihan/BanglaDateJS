@@ -9,7 +9,7 @@ At present, 96.42% code coverage is achieved in test cases.
 # ব্যবহার নির্দেশিকা
  এই লাইব্রেরীটি ব্যবহার করতে অন্য কোন লাইব্রেরী আবশ্যক নয়। প্রথমে লাইব্রেরীটি লোড করুন আপনার কোডে:
 ```javascript
-<script type='text/javascript' src='<path-to-buetDateTime.js'></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AhmedMRaihan/BanglaDateJS@master/src/buetDateTime.js"></script>
 ```
 এরপরে নিচের কোডটি কল করুন convert ফাংশনে আপনার দরকার মতো প্যারামিটার দিয়ে:
 ```javascript
