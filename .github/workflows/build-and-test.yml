@@ -12,12 +12,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Install Node.js 
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         cache: 'npm'
-    - run: npm install --no-optional
+        node-version: 'latest'
+
+    - run: npm install --omit=optional
     - run: npm test
     - run: echo Build and tests are successful for ${{ inputs.commit_sha }}
 
