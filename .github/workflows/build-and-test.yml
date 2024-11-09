@@ -18,8 +18,8 @@ jobs:
       with:
         cache: 'npm'
         node-version: 'latest'
-        
-    - run: npm install --no-optional
+
+    - run: npm install --omit=optional
     - run: npm test
     - run: echo Build and tests are successful for ${{ inputs.commit_sha }}
 
