@@ -1,4 +1,5 @@
-const buetDateConverter = require('../src/buetDateTime.js');
+import { expect } from 'chai';
+import { buetDateConverter } from '../src/buetDateTime.js';
 
 const localToUTC = (date) => {
     // By setting TZ=UTC in config, we don't need this function anymore. https://stackoverflow.com/a/46980825
@@ -9,13 +10,13 @@ const localToUTC = (date) => {
 describe('System date conversion', () => {
     it('Current year value will match', () => {
         let currentTime = new buetDateConverter();
-        expect(currentTime.convert("Y")).toBe('১৪৩২');
+        expect(currentTime.convert("Y")).to.equal('১৪৩৩');
     });
 
     it('Initial epoch value will match', () => {
         // 1970-01-01T00:00:01.001+0000
         let epochTime = new buetDateConverter(localToUTC(new Date(0)));
-        expect(epochTime.convert("Y-m-dTH:i:s (A)")).toBe('১৩৭৬-৯-১৭T০০:০:০ (রাত)');
+        expect(epochTime.convert("Y-m-dTH:i:s (A)")).to.equal('১৩৭৬-৯-১৭T০০:০:০ (রাত)');
     });
 });
 
@@ -25,12 +26,12 @@ describe("Commonly used formats", () => {
     let convertedDate = new buetDateConverter(date);
 
     it("ISO-8601 format conversion will match", () => {
-        expect(convertedDate.convert("Y-m-dTH:i:s")).toBe('১৪১১-৮-২৭T১৯:৪৭:১০');
+        expect(convertedDate.convert("Y-m-dTH:i:s")).to.equal('১৪১১-৮-২৭T১৯:৪৭:১০');
     });
 
     it("Time format from daily life will match", () => {
         expect(convertedDate.convert("d F, A hটা i মিনিট s সেকেন্ড, Y"))
-            .toBe('২৭ অগ্রহায়ণ, সন্ধ্যা ৭টা ৪৭ মিনিট ১০ সেকেন্ড, ১৪১১');
+            .to.equal('২৭ অগ্রহায়ণ, সন্ধ্যা ৭টা ৪৭ মিনিট ১০ সেকেন্ড, ১৪১১');
     });
 });
 
@@ -41,10 +42,10 @@ describe("Rarely used formats", () => {
     var convertedSingleDigitDate = new buetDateConverter(singleDigitDate);
 
     it("Single digit hour representation is ok", () => {
-        expect(convertedSingleDigitDate.convert("H")).toBe("০৯");
+        expect(convertedSingleDigitDate.convert("H")).to.equal("০৯");
     });
     it("Month conversion is ok", () => {
-        expect(convertedSingleDigitDate.convert("F")).toBe('পৌষ');
+        expect(convertedSingleDigitDate.convert("F")).to.equal('পৌষ');
     });
 });
 
@@ -55,14 +56,14 @@ describe("Leap year", () => {
         let leapYear = localToUTC(new Date(1330511084029));
         let convertedLeapYear = new buetDateConverter(leapYear);
 
-        expect(convertedLeapYear.convert("l, j F Y, A g:i")).toBe('বুধবার, ১৭ ফাল্গুন ১৪১৮, সকাল ১০:২৪');
+        expect(convertedLeapYear.convert("l, j F Y, A g:i")).to.equal('বুধবার, ১৭ ফাল্গুন ১৪১৮, সকাল ১০:২৪');
     });
 
     it("Bengali calendar date after leap year day", () => {
         // 2016-03-14T01:02:03.459+0600
         let bnLeapYear = localToUTC(new Date(1457917323459));
         let bnConvertedLeapYear = new buetDateConverter(bnLeapYear);
-        expect(bnConvertedLeapYear.convert("j F")).toBe('৩১ ফাল্গুন');
+        expect(bnConvertedLeapYear.convert("j F")).to.equal('৩১ ফাল্গুন');
     });
 
 });
@@ -72,20 +73,20 @@ describe("Example dates for changed convention of 2019", () => {
     it('Datetime after setting Ashwin to 31days', () => {
         // Fri, 08 Nov 2019 18:41:30 +0000
         let epochTime = new buetDateConverter(localToUTC(new Date(1573238490000)));
-        expect(epochTime.convert("d F Y")).toBe('২৩ কার্তিক ১৪২৬');
+        expect(epochTime.convert("d F Y")).to.equal('২৩ কার্তিক ১৪২৬');
     });
 
     /*
     it('International Mother Language day - 1952', () => {
         // 1952-02-21T00:00:01.001+0000 --> this is before epoch, so regular date object is provided
         let epochTime = new buetDateConverter(localToUTC(new Date('1952-02-21T00:00:01')));
-        expect(epochTime.convert("Y-m-d")).toBe('১৩৫৮-১১-৮');
+        expect(epochTime.convert("Y-m-d")).to.be('১৩৫৮-১১-৮');
     });
     */
 
     it('International Mother Language day - 2020', () => {
         // Friday, February 21, 2020 12:00:01 AM GMT+06:00
         let epochTime = new buetDateConverter(localToUTC(new Date(1582221601000)));
-        expect(epochTime.convert("Y-m-d")).toBe('১৪২৬-১১-৮');
+        expect(epochTime.convert("Y-m-d")).to.equal('১৪২৬-১১-৮');
     });
 });
