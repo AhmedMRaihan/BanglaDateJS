@@ -162,3 +162,4 @@ buetDateConverter.prototype.formatConvertList =
 if ("object" === typeof module && "object" === typeof module.exports) {
 	module.exports = buetDateConverter;
 }
+export { buetDateConverter };
